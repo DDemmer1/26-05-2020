@@ -7,6 +7,7 @@
 Ziel dieser Aufgabe ist es ein kleines [Hangman/Galgenmännchen-Spiel](https://de.wikipedia.org/wiki/Galgenm%C3%A4nnchen) für die Eingabe-Konsole zu entwickeln.
 
 ⬇️Musterlösung GIF🎞️
+
 ![Hangman](hangman.gif)
 
 Ihr könnt gerne einen komplett eigenen Versuch starten. Wer jedoch einen Denkanstoß braucht kann sich gerne dieses GitHub-Repository herunterladen und die vorhandene Programmstruktur nutzen/vervollständigen.
