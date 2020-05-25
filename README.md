@@ -13,7 +13,7 @@ Ihr könnt gerne einen komplett eigenen Versuch starten. Wer jedoch einen Denkan
 
 
 Tipps ⚠️:
-  - Verwendet gerne dieses ```String[]``` [klick](https://github.com/DDemmer1/26-05-2020/blob/master/pics) um euer Galgenmännchen darzustellen
+  - Verwendet gerne dieses ```String[] array``` [klick](https://github.com/DDemmer1/26-05-2020/blob/master/pics) um euer Galgenmännchen darzustellen
   - Wenn ihr nach dem Abschluss eines Zuges genug Leerzeilen in der Konsole ausgebt, sieht es so aus als ob sich euer CLI nicht bewegt sondern animiert ist
   
   
