@@ -1,5 +1,6 @@
 package de.demmer.dennis;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -111,13 +112,16 @@ public class Hangman {
 			printHangman();
 			System.out.println("You loose. The word was '" + wordBag[randomIndex] + "'");
 		}
+		
+		
 	}
 	
 
 	private int getRandomIndex() {
 		// TODO 
 		// return random int in range of the wordBag length
-		return 0;
+		
+		return (int) Math.floor(Math.random()*wordBag.length);
 	}
 
 	private boolean checkForWin() {
@@ -126,8 +130,18 @@ public class Hangman {
 		// print finished word and congratulation message
 		// return true
 		
+		for (Letter letter : word) {
+			if(!letter.isSolved()) {
+				return false;
+			}
+		}
+		
+		System.out.println();
+		printWord();
+		System.out.println("You win!");
+		
 		//else
-		return false;
+		return true;
 	}
 
 	private void askForChar() {
@@ -137,6 +151,27 @@ public class Hangman {
 		// if so set the letters isSolved boolean to true
 		// if no equal char found -> tries -1
 		
+		
+		System.out.println("\n Please enter new letter and press ENTER");
+		
+		Character input = scanner.next().charAt(0);
+		
+		boolean charFound = false;
+	
+		for (Letter letter : word) {
+			Character letterLower = Character.toLowerCase(letter.getLetter());
+			Character inputLower = Character.toLowerCase(input);
+			
+			if(letterLower.equals(inputLower)) {
+				letter.setSolved(true);
+				charFound = true;
+			}
+		}
+		
+		if(charFound == false) {
+			tries = tries -1;
+		}
+		
 	}
 
 	private void printWord() {
@@ -145,17 +180,37 @@ public class Hangman {
 		// if the current Letter isSolved print " "
 		// else print "_"
 		
+		for (Letter letter : word) {
+			if(letter.isSolved()) {
+				System.out.print(letter.getLetter()+ " ");
+			} else {
+				System.out.print("_ ");
+			}
+		}
+		
+		System.out.println();
+		
 	}
 
 	private void printHangman() {
 		// TODO
 		// print the current picture from the 'String[] pics' based on the tries left
+		
+		System.out.println(pics[pics.length-tries-1]);
+				
 	}
 
 	private List<Letter> wordToList(String string) {
 		// TODO
 		// Fill the List<Letter> with the chars of the string
-		return null;
+		
+		List<Letter> letters = new ArrayList<Letter>();
+		
+		for (Character character  : string.toCharArray()) {
+			letters.add(new Letter(character));	
+		}
+		
+		return letters;
 	}
 	
 }
